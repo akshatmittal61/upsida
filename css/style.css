@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Montserrat&family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --bgcolor: #eeeeee;
+    --bgcolor-high: #dddddd;
+    --tcolor: #222222;
+    --tcolor-high: #333333;
+    --blue: #1a73e8;
+    --head-height: 10vh;
+    --body-height: 90vh;
+    --transition-time: 200ms;
+}
+.light{
+    --bgcolor: #eeeeee;
+    --bgcolor-high: #dddddd;
+    --tcolor: #222222;
+    --tcolor-high: #333333;
+    transition: all var(--transition-time) ease-in-out;
+}
+.dark{
+    --bgcolor: #222222;
+    --tcolor: #eeeeee;
+    --bgcolor-high: #333333;
+    --tcolor-high: #dddddd;
+    transition: all var(--transition-time) ease-in-out;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--bgcolor);
+    color: var(--tcolor);
+    font-family: Cabin,sans-serif;
+    font-size: 1rem;
+    display: flex;
+    flex-flow: column;
+}
+body > *{
+    width: 100%;
+}
+.btn{
+    border-radius: 500px;
+}
+.material-icons{
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+/* header.css */
+/* footer css */
+/* side bar css */
+.site-content{
+    float: right;
+    width: 80%;
+    position: relative;
+    top: var(--head-height);
+    left: 0;
+    min-height: 90vh;
+}
+.main-content{
+    min-height: 67vh;
+}
+.middle-images-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem;
+    margin: 0.5rem;
+    background-color: #4a5de3;
+    transition: all 0.2s ease-in-out;
+    clip-path: polygon(0 0, 30% 0, 40% 50%, 30% 100%, 0 100%);
+}
+.middle-images-container:hover{
+    background-color: var(--blue);
+    clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+}
+.middle-section h3{
+    font-size: 1.25rem;
+}
+.middle-images .middle-img{
+    margin-right: 1.25rem;
+    width: 100px;
+    clip-path: circle(50%);
+}
+.carousel{
+    width: 660px;
+    height: 294px;
+}
+.carousel img{
+    filter: brightness(50%);
+}
+.carousel-caption h5+p{
+    font-size: 0.75rem;
+}
+@media (max-width: 576px){
+    .upsida-logo{
+        max-height: 100%;
+    }
+}
+.show{
+    opacity: 1;
+    visibility: visible;
+    width: auto;
+    height: auto;
+}
+.hide{
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+.dispn{
+    display: none;
+}
