@@ -1,5 +1,5 @@
 .side-bar{
-    height: auto;
+    height: 100vh;
     margin: 0;
     float: left;
     min-height: var(--body-height);
@@ -9,6 +9,7 @@
     top: var(--head-height);
     left: 0;
     z-index: 1000;
+    overflow-y: auto;
 }
 .nav-bar .nav-list{
     list-style-type: none;
@@ -71,8 +72,14 @@
     margin: 0.5rem;
     border-radius: 50%;
     text-decoration: none;
-    font-size: 27px;
+    font-size: 2rem;
     transition: all var(--transition-time) ease-in-out;
+}
+.fb{
+    color: #4267B2;
+}
+.twit, .twit:hover{
+    color: #1DA1F2;
 }
 @media (max-width: 992px){
     .side-bar{
@@ -122,5 +129,10 @@
     }
     .site-content{
         width: 100%;
+    }
+    .social-handle{
+        width: 0;
+        opacity: 0;
+        visibility: hidden;
     }
 }

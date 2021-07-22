@@ -108,6 +108,10 @@ for (let i = 0; i < 4; ++i) {
 function showSideMd() {
     sideBar.style.width = "20%";
     socialHandle.style.flexFlow = "row";
+    socialHandle.style.opacity = 1;
+    socialHandle.style.visibility = "visible";
+    socialHandle.style.width = "auto";
+    socialHandle.style.position = "relative";
     for (let i = 0; i < 10; ++i) {
         navLink[i].style.justifyContent = "flex-start";
         navLink[i].style.overflow = "hidden";
@@ -124,6 +128,10 @@ function showSideMd() {
 function hideSideMd() {
     sideBar.style.width = "10%";
     socialHandle.style.flexFlow = "column";
+    socialHandle.style.opacity = 1;
+    socialHandle.style.visibility = "visible";
+    socialHandle.style.width = "auto";
+    socialHandle.style.position = "relative";
     for (let i = 0; i < 10; ++i) {
         navLink[i].style.justifyContent = "center";
         navLink[i].style.overflow = "hidden";
@@ -142,6 +150,10 @@ function showSideSm() {
     sideBar.style.width = "50%";
     console.log(sideBar.style.width);
     socialHandle.style.flexFlow = "row";
+    socialHandle.style.opacity = 1;
+    socialHandle.style.visibility = "visible";
+    socialHandle.style.width = "auto";
+    socialHandle.style.position = "relative";
     for (let i = 0; i < 10; ++i) {
         navLink[i].style.justifyContent = "flex-start";
         navLinkText[i].style.opacity = 1;
@@ -159,6 +171,10 @@ function hideSideSm() {
     sideBar.style.width = 0;
     console.log(sideBar.style.width);
     socialHandle.style.flexFlow = "column";
+    socialHandle.style.opacity = 0;
+    socialHandle.style.visibility = "hidden";
+    socialHandle.style.width = 0;
+    socialHandle.style.position = "relative";
     for (let i = 0; i < 10; ++i) {
         navLink[i].style.justifyContent = "center";
         navLink[i].style.overflow = "hidden";
@@ -231,12 +247,6 @@ function mediafunSm(x) {
     else {
         console.log("Get out small");
         showSideMd();
-        /* navBar.addEventListener("mouseover", () => {
-            showSideSm();
-        });
-        navBar.addEventListener("mouseout", () => {
-            showSideSm();
-        }); */
     }
 }
 
