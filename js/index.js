@@ -256,3 +256,21 @@ mediaMd.addListener(mediafunMd);
 let mediaSm = window.matchMedia("(max-width: 576px)");
 mediafunSm(mediaSm);
 mediaSm.addListener(mediafunSm);
+
+
+mybutton = document.querySelector(".scroll-to-top");
+window.onscroll = function () { scrollFunction() };
+mybutton.addEventListener("click", () => {
+    topFunction();
+});
+function scrollFunction() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        mybutton.style.display = "inline-block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
