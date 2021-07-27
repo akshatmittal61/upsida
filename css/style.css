@@ -28,6 +28,9 @@
     --tcolor-high: #dddddd;
     transition: all var(--transition-time) ease-in-out;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     height: 100vh;
     width: 100%;
