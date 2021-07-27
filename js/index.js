@@ -81,6 +81,32 @@ lightButton.onclick = () => {
     document.querySelector(".up-logo img").setAttribute("src", "./images/up_Black.png");
     document.querySelector(".footer-img img").setAttribute("src", "./images/up_Black.png");
 };
+
+let pauseButton = document.querySelector(".pause");
+let playButton = document.querySelector(".play");
+pauseButton.addEventListener("click", () => {
+    pauseButton.classList.add("dispn");
+    playButton.classList.remove("dispn");
+    document.querySelector(".news-tender-list").style.animationPlayState = "paused";
+})
+playButton.addEventListener("click", () => {
+    playButton.classList.add("dispn");
+    pauseButton.classList.remove("dispn");
+    document.querySelector(".news-tender-list").style.animationPlayState = "running";
+})
+
+document.querySelector(".important-links-text-container").addEventListener("click", () => {
+    importantLinkPopup.classList.toggle("checked");
+})
+document.querySelector(".close-popup").addEventListener("click", () => {
+    importantLinkPopup.classList.toggle("checked");
+})
+document.addEventListener("mouseup", (e) => {
+    if (!importantLinkPopupBox.contains(e.target) && importantLinkPopup.classList.contains("checked")) {
+        importantLinkPopup.classList.toggle("checked");
+    }
+});
+
 let sideBar = document.querySelector(".side-bar");
 let navBar = document.querySelector(".nav-bar");
 let navLink = document.querySelectorAll(".nav-list .nav-link");
@@ -88,6 +114,8 @@ let navIcon = document.querySelectorAll(".nav-list .nav-link .nav-icon");
 let navLinkText = document.querySelectorAll(".nav-list .nav-link .nav-link-text");
 let socialHandle = document.querySelector(".social-handle");
 let expandNav = document.querySelectorAll(".expand-nav");
+let importantLinkPopup = document.querySelector(".important-link-popup");
+let importantLinkPopupBox = document.querySelector(".important-link-popup-box");
 for (let i = 0; i < 4; ++i) {
     document.querySelectorAll(".expand-check")[i].addEventListener("mouseover", () => {
         expandNav[i].classList.add("show");
@@ -97,7 +125,7 @@ for (let i = 0; i < 4; ++i) {
         expandNav[i].classList.remove("show");
         expandNav[i].classList.add("hide");
     })
-    document.querySelectorAll(".expand-check")[i].addEventListener("click",function(e){
+    document.querySelectorAll(".expand-check")[i].addEventListener("click", function (e) {
         e.preventDefault();
     })
     document.querySelectorAll(".expand-check")[i].addEventListener("click", () => {
@@ -146,9 +174,7 @@ function hideSideMd() {
     }
 }
 function showSideSm() {
-    console.log("ShowSideSm");
     sideBar.style.width = "50%";
-    console.log(sideBar.style.width);
     socialHandle.style.flexFlow = "row";
     socialHandle.style.opacity = 1;
     socialHandle.style.visibility = "visible";
@@ -167,9 +193,7 @@ function showSideSm() {
     }
 }
 function hideSideSm() {
-    console.log("HideSideSm");
     sideBar.style.width = 0;
-    console.log(sideBar.style.width);
     socialHandle.style.flexFlow = "column";
     socialHandle.style.opacity = 0;
     socialHandle.style.visibility = "hidden";
@@ -197,19 +221,16 @@ function mediafunMd(x) {
         navBar.addEventListener("mouseout", () => {
             hideSideMd();
         });
-        document.querySelector(".side-bar-expand-btn-md").addEventListener("click",()=>{
-            if(sideBar.style.width == "10%"){
-                console.log("I will make show");
+        document.querySelector(".side-bar-expand-btn-md").addEventListener("click", () => {
+            if (sideBar.style.width == "10%") {
                 showSideMd();
             }
-            else{
-                console.log("I will make hide");
+            else {
                 hideSideMd();
             }
         })
     }
     else {
-        console.log("Get out medium");
         showSideMd();
         navBar.addEventListener("mouseover", () => {
             showSideMd();
@@ -220,9 +241,7 @@ function mediafunMd(x) {
     }
 }
 function mediafunSm(x) {
-    console.log("I got in media query small");
     if (x.matches) {
-        console.log("Small media query matched");
         hideSideSm();
         navBar.addEventListener("mouseover", () => {
             showSideSm();
@@ -230,22 +249,16 @@ function mediafunSm(x) {
         navBar.addEventListener("mouseout", () => {
             showSideSm();
         });
-        document.querySelector(".side-bar-expand-btn-sm").addEventListener("click",()=>{
-            console.log("I can detect click");
-            if(sideBar.style.width == "0px"){
-                console.log("Now width is: " + sideBar.style.width);
-                console.log("I will make show");
+        document.querySelector(".side-bar-expand-btn-sm").addEventListener("click", () => {
+            if (sideBar.style.width == "0px") {
                 showSideSm();
             }
-            else{
-                console.log("Now width is: " + sideBar.style.width);
-                console.log("I will make hide");
+            else {
                 hideSideSm();
             }
         })
     }
     else {
-        console.log("Get out small");
         showSideMd();
     }
 }

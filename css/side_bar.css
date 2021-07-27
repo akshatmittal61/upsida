@@ -63,7 +63,7 @@
 .expand-item:not(:last-child){
     margin-bottom: 0.5rem;
 }
- .social-handle{
+.social-handle{
     display: flex;
     justify-content: center;
     align-items: center;

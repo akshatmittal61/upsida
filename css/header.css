@@ -63,11 +63,12 @@
 }
 .header-right *{
     margin: 0 0.25rem;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .header-right .calendar *{
     font-size: 0.75rem;
     margin: 0;
-    width: 6rem;
 }
 .header-btn-link{
     display: flex;
